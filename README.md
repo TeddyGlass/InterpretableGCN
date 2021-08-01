@@ -14,6 +14,6 @@ The codes is to develop Graph Convolutional Network (GCN) model for drug discove
 │   ├── MolecularGCN.py
 │   ├── Integrated_Gradient.py
 │   └── train.py
-├── model
+└── model
     └── checkpoint_model.pth
 ```
