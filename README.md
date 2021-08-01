@@ -13,7 +13,7 @@ The codes is to develop Graph Convolutional Network (GCN) model for drug discove
 │   ├── Early_stopping.py
 │   ├── MolecularGCN.py
 │   ├── Integrated_Gradient.py
-│   └── smiles_cas_N6512.smi
+│   └── train.py
 ├── model
 │   └── checkpoint_model.pth
 ├── images
