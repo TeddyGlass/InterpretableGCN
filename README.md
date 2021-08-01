@@ -15,6 +15,5 @@ The codes is to develop Graph Convolutional Network (GCN) model for drug discove
 │   ├── Integrated_Gradient.py
 │   └── train.py
 ├── model
-│   └── checkpoint_model.pth
-├── images
+    └── checkpoint_model.pth
 ```
