@@ -25,3 +25,7 @@ conda create -n InterpretableGCN pyhton=3.8.1 -y
 source activage InterpretableGCN
 conda install --yes --file requirements.txt
 ```
+
+# Training
+
+# Visualization
