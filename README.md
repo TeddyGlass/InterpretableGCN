@@ -21,6 +21,7 @@ The codes is to develop [Graph Convolutional Network (GCN)](https://arxiv.org/ab
 
 # Enviornment
 ```bash
-conda create -n interpretableGCN pyhton=3.8.1 -y
+conda create -n InterpretableGCN pyhton=3.8.1 -y
+source activage InterpretableGCN
 conda install --yes --file requirements.txt
 ```
