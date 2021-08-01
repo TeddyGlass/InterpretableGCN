@@ -18,3 +18,9 @@ The codes is to develop [Graph Convolutional Network (GCN)](https://arxiv.org/ab
 └── model
     └── checkpoint_model.pth
 ```
+
+# Enviornment
+```bash
+conda create -n interpretableGCN pyhton=3.8.1 -y
+conda install --yes --file requirements.txt
+```
