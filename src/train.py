@@ -16,6 +16,7 @@ from network import MolecularGCN
 from callbacks import EarlyStopping
 
 import argparse
+import configparser
 
 
 def train(model, optimizer, loader):
@@ -168,6 +169,7 @@ if __name__ == "__main__":
             print("-"*100)
             break
     
+    # learning curve
     fig = plt.figure(figsize=(8,6))
     ax1 = fig.add_subplot(111)
     epochs_ = np.arange(1,len(history['loss_train'])+1)
@@ -180,3 +182,15 @@ if __name__ == "__main__":
     ax1.legend(h1, l1, loc='lower right')
     plt.savefig('../figure/learning_curve.png', dpi=200)
     plt.show()
+
+    # create configure file
+    config = configparser.RawConfigParser()
+    section = 'parameters'
+    config.add_section(section)
+    config.set(section, 'batch_size', args.batch_size)
+    config.set(section, 'dim', args.dim)
+    config.set(section, 'n_conv_hidden', args.n_conv_hidden)
+    config.set(section, 'n_mlp_hidden', args.n_mlp_hidden)
+    config.set(section, 'dropout', args.dropout)
+    with open('../model/config.ini', 'w') as f:
+        config.write(f)

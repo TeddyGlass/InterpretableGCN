@@ -45,8 +45,9 @@ sh start_train.sh
 ```
 ![demo](/images/demo.png)
 ![learning_curve](/images/learning_curve.png)
+When model training was completed, configure file with parameters is saved in model folder.  
 
-You can also edit training parameters in start_train.sh.
+Additianally, you can edit training parameters in start_train.sh.
 ```bash:start_train.sh
 data=../data/smiles_cas_N6512.smi
 batch_size=128
