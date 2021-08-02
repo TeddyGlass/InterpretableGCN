@@ -21,7 +21,8 @@ The codes are to develop [Graph Convolutional Network (GCN)](https://arxiv.org/a
 │     └── train.py
 ├── install_packages.sh
 ├── train.sh
-├── README.md
+├── visualize.sh
+└── README.md
 
 ```
 
