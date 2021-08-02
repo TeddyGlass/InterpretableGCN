@@ -33,7 +33,7 @@ conda create -n InterpretableGCN python=3.8.1 -y
 source activate InterpretableGCN
 bash install_packages.sh
 ```
-Confirm that the installation has completed successfully. Your version of pytorch and pytorch geometric are showed your terminal.
+Confirm that the installation has completed successfully. The version of pytorch and pytorch geometric are showed your terminal.
 ```bash
 python -c "import torch; print(torch.__version__)"
 python -c "import torch_geometric; print(torch_geometric.__version__)"
@@ -64,3 +64,4 @@ python ./src/train.py $data $batch_size $dim $n_conv_hidden $n_mlp_hidden $dropo
 ```
 
 # Visualization
+To work visualization of the prediction basis of GCN, you have to specify the configure file which was generated after training.
