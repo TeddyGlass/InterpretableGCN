@@ -65,12 +65,16 @@ if __name__ == '__main__':
     print('-'*100)
 
     # prediction
+    print('-'*100)
+    print('prediction')
     batch = torch.zeros(mol_graph.x.shape[0], dtype=int).to(device)
     x, edge_index = mol_graph.x, mol_graph.edge_index
     model.eval()
     with torch.no_grad():
         y_pred = model.forward(x, edge_index, batch, edge_weight=None).detach().numpy()
     predicted_class = int(np.argmax(y_pred))
+    print('predicted class', predicted_class)
+    print('-'*100)
     
     # integrated gradients
     edge_mask_dict = ig.integrated_grads_mask(model, mol_graph, predicted_class)
@@ -96,5 +100,5 @@ if __name__ == '__main__':
     )
     drawer.FinishDrawing()
     svg = drawer.GetDrawingText().replace('svg:', '')
-    with open('../figure/integrated_grads.svg', 'w') as f:
+    with open(f'../figure/integrated_grads-predicted_{predicted_class}.svg', 'w') as f:
         f.write(svg)
