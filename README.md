@@ -8,15 +8,21 @@ The codes are to develop [Graph Convolutional Network (GCN)](https://arxiv.org/a
 ```
 .
 ├── data
-│   └── smiles_cas_N6512.smi
+│     └── smiles_cas_N6512.smi
+├── figure
+├── images
+├── model
+│     └── checkpoint_model.pth
 ├── src
-│   ├── mol2graph.py
-│   ├── callbacks.py
-│   ├── network.py
-│   ├── integrated_gradients.py
-│   └── train.py
-└── model
-    └── checkpoint_model.pth
+│     ├── mol2graph.py
+│     ├── callbacks.py
+│     ├── network.py
+│     ├── integrated_gradients.py
+│     └── train.py
+├── install_packages.sh
+├── train.sh
+├── README.md
+
 ```
 
 # Installation of packages
