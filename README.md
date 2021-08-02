@@ -64,7 +64,7 @@ python ./src/train.py $data $batch_size $dim $n_conv_hidden $n_mlp_hidden $dropo
 ```
 
 # Visualization
-To work visualization of the prediction basis of GCN, you have to specify the configure file which was generated after training and SMILES. Output file with name of predicted classs is restored in firuge folder.
+To work visualization of the prediction basis of GCN, you have to specify SMILES you want to predict and the configure file which was generated after training. Output file with name of predicted classs is restored in firuge folder.
 
 sample code
 ```
