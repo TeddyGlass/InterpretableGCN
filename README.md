@@ -37,7 +37,8 @@ python -c "import torch_geometric; print(torch_geometric.__version__)"
 ```bash
 sh start_train.sh
 ```
-![demo](/images/demo.png) 
+![demo](/images/demo.png)
+![learning_curve](/images/learning_curve.png)
 
 You can also edit training parameters in start_train.sh.
 ```bash:start_train.sh
