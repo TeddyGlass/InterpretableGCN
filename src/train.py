@@ -192,5 +192,9 @@ if __name__ == "__main__":
     config.set(section, 'n_conv_hidden', args.n_conv_hidden)
     config.set(section, 'n_mlp_hidden', args.n_mlp_hidden)
     config.set(section, 'dropout', args.dropout)
+    config.set(section,'lr', args.lr)
+    config.set(section,'n_epochs',args.n_epochs)
+    config.set(section,'patience',args.patience)
+    config.set(section,'model_path',args.model_path)
     with open('../model/config.ini', 'w') as f:
         config.write(f)
