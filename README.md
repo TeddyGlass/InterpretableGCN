@@ -11,9 +11,9 @@ The codes are to develop [Graph Convolutional Network (GCN)](https://arxiv.org/a
 │   └── smiles_cas_N6512.smi
 ├── src
 │   ├── mol2graph.py
-│   ├── Early_stopping.py
-│   ├── MolecularGCN.py
-│   ├── Integrated_Gradient.py
+│   ├── callbacks.py
+│   ├── network.py
+│   ├── integrated_gradients.py
 │   └── train.py
 └── model
     └── checkpoint_model.pth
@@ -27,12 +27,32 @@ conda create -n InterpretableGCN python=3.8.1 -y
 source activate InterpretableGCN
 bash install_packages.sh
 ```
-Confirm that the installation has completed successfully. Your version of pytorch and pytorch geometric is showed your terminal.
+Confirm that the installation has completed successfully. Your version of pytorch and pytorch geometric are showed your terminal.
 ```bash
 python -c "import torch; print(torch.__version__)"
 python -c "import torch_geometric; print(torch_geometric.__version__)"
 ```
 
 # Training
+```bash
+sh start_train.sh
+```
+![demo](/images/demo.png) 
+
+You can also edit training parameters in start_train.sh.
+```bash:start_train.sh
+data=../data/smiles_cas_N6512.smi
+batch_size=128
+dim=64
+n_conv_hidden=4
+n_mlp_hidden=1
+dropout=0.1
+lr=1e-4
+n_epochs=1000
+patience=1
+model_path=../model/checkpoint_model.pth
+
+python ./src/train.py $data $batch_size $dim $n_conv_hidden $n_mlp_hidden $dropout $lr $n_epochs $patience $model_path
+```
 
 # Visualization
