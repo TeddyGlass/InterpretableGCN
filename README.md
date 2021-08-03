@@ -42,7 +42,7 @@ python -c "import torch_geometric; print(torch_geometric.__version__)"
 
 # Training
 ```bash
-sh start_train.sh
+bash start_train.sh
 ```
 ![demo](/images/demo.png)
 ![learning_curve](/images/learning_curve.png)
@@ -65,11 +65,15 @@ python ./src/train.py $data $batch_size $dim $n_conv_hidden $n_mlp_hidden $dropo
 ```
 
 # Visualization
-To work visualization of the prediction basis of GCN, you have to specify SMILES you want to predict and the configure file which was generated after training. Output file with name of predicted classs is restored in firuge folder.
-
-```
+To work visualization of the prediction basis of GCN, you have to specify SMILES you want to predict and the configure file which was generated after training. Output file with name of predicted classs is restored in firuge folder.  
+Please edit visualize.sh as following.
+```bash
 config=../model/config.ini
-smiles='OC(=O)c1ccccc1'
+smiles='OC(=O)c1ccccc1' # You can edit it yourself !
 
 python ./src/visualize.py $config $smiles
+```
+To visualize, run the following command
+```bash
+bash visualize.sh
 ```
