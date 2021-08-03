@@ -66,7 +66,7 @@ python ./src/train.py $data $batch_size $dim $n_conv_hidden $n_mlp_hidden $dropo
 
 # Visualization
 To work visualization of the prediction basis of GCN, you have to specify SMILES you want to predict and the configure file which was generated after training. When you have completed the ptrediction and visualization of the prediction basis, output file with name of predicted classs is saved in firuge folder.  
-Please edit visualize.sh as following.
+Please edit **visualize.sh** as following.
 ```bash
 config=../model/config.ini
 smiles='OC(=O)c1ccccc1' # You can edit it yourself !
