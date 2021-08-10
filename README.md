@@ -12,7 +12,8 @@ This code is to develop [Graph Convolutional Network (GCN)](https://arxiv.org/ab
 ├── figure
 ├── images
 ├── model
-│     └── checkpoint_model.pth
+│     ├── checkpoint_model.pth
+│     └── config.ini
 ├── src
 │     ├── mol2graph.py
 │     ├── callbacks.py
