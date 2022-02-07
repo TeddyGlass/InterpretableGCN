@@ -36,18 +36,19 @@ def train(model, optimizer, loader):
 def eval(model, loader):
     model.eval()
     with torch.no_grad():
-        P, S = [], []
+        T, P = [], []
         loss_all = 0
         for data in loader:
             data = data.to(device)
-            y_true = data.y.to(device).detach().numpy()
             output = model.forward(data.x, data.edge_index, data.batch)
-            y_pred = output.detach().numpy()[:,1]
-            P.append(y_pred)
-            S.append(roc_auc_score(y_true, y_pred))
             loss = F.cross_entropy(output, data.y)
             loss_all += loss.item() * data.num_graphs
-    return  np.concatenate(P), loss_all/len(loader), np.mean(S)
+            T.append(data.y.to(device).detach().numpy())
+            P.append(output.detach().numpy()[:, 1])
+        y_true = np.concatenate(T)
+        y_pred = np.concatenate(P)
+        score = roc_auc_score(y_true, y_pred)
+    return  loss_all/len(loader), score
 
 
 if __name__ == "__main__":
